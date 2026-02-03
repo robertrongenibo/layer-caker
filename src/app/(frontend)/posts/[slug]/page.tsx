@@ -2,6 +2,7 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { POST_QUERY } from "@/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { Post } from "@/components/post";
 
 export default async function Page({
   params,
@@ -19,7 +20,7 @@ export default async function Page({
 
   return (
     <main className="container mx-auto grid grid-cols-1 gap-6 p-12">
-      <h1 className="text-4xl font-bold text-balance">{post?.title}</h1>
+      <Post {...post} />
       <hr />
       <Link href="/posts">&larr; Return to index</Link>
     </main>
